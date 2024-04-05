@@ -10,7 +10,7 @@ import enumRepo.*;
 public class GenerateRecords {
     // Method to generate a list of n Companies
     public static List<Company> generateCompanies(int n) {
-        List<Company> companies = new ArrayList<Company>();
+        List<Company> companies = new ArrayList<>();
         Random random = new Random();
         Countries[] countries = Countries.values(); // Get all enum values
         CompanyNames[] companyNames = CompanyNames.values(); // Get all enum values
