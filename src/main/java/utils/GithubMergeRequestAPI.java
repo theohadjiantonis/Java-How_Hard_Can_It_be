@@ -14,7 +14,8 @@ public class GithubMergeRequestAPI {
                 .body("{\"commit_title\": \"" + commitMessage + "\", \"merge_method\": \"merge\"}")
                 .put("/repos/" + userName + "/" + repo + "/pulls/" + pullRequestId + "/merge");
 
-        System.out.println("Pull Request #" + pullRequestId + " merged.");
+        System.out.println("Pull Request #" + pullRequestId);
+        System.out.println("Response Code: " + response.statusCode());
         response.prettyPrint();
     }
 }

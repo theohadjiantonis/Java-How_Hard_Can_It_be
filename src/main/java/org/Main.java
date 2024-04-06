@@ -26,7 +26,7 @@ public class Main {
         String response = GithubCommitAPI.updateCsvFileInGithub(base64Content, "Companies.csv", "main", AUTHTOKEN, "Java-How_Hard_Can_It_be", USERNAME, EMAIL);
 
         //Create pull request and get pull request Id
-        String prId = GithubPullRequestAPI.createPullRequest("main", "feature-branch", "merge", "mergin", AUTHTOKEN,USERNAME,REPONAME);
+        String prId = GithubPullRequestAPI.createPullRequest("main", "feature-branch", "merge", "merging", AUTHTOKEN,USERNAME,REPONAME);
         //Merge code from master to develop
         GithubMergeRequestAPI.mergePullRequest(prId, "Get that CSV in here", AUTHTOKEN,USERNAME,REPONAME);
         for (Company company : companiesList) {
