@@ -8,10 +8,10 @@ import java.util.Base64;
 import java.util.List;
 
 public class Main {
-    private static final String AUTHTOKEN = "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";
-    private static final String USERNAME = "theohadjiantonis";
+    private static final String AUTHTOKEN = "";
+    private static final String USERNAME = "";
     private static final String REPONAME = "Java-How_Hard_Can_It_be";
-    private static final String EMAIL = "theohadjiantonis@gmail.com";
+    private static final String EMAIL = "";
 
     public static void main(String[] args) {
         //generate a list with company objects
