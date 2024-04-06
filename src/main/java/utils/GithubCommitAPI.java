@@ -3,12 +3,12 @@ package utils;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GithubCsvUpdater {
+public class GithubCommitAPI {
 
     public static String updateCsvFileInGithub(String base64Content, String filePath, String branch, String token, String repoName, String userName, String email) {
         String url = String.format("https://api.github.com/repos/%s/%s/contents/%s", userName, repoName, filePath);
         String message = "Updating CSV file";
-        String sha = GithubFileSHA.getFileSHA(url, token);
+        String sha = GithubGetShaAPI.getFileSHA(url, token);
 
         // JSON payload for the request
         String payload = String.format("{"

@@ -3,7 +3,7 @@ package utils;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GithubFileSHA {
+public class GithubGetShaAPI {
 
     public static String getFileSHA(String url, String token) {
 
