@@ -28,6 +28,7 @@ public class GithubCommitAPI {
 
         // Print the response body
         System.out.println("Update CSV Response Body: ");
+        System.out.println("Response Code: " + response.statusCode());
         response.body().prettyPrint();
 
         return response.body().toString();

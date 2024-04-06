@@ -15,7 +15,7 @@ public class GithubPullRequestAPI {
                 .post("/repos/" + userName + "/" + repo + "/pulls");
 
         System.out.println("Pull Request Response: ");
-        response.prettyPrint();
+        System.out.println("Response Code: " + response.statusCode());
         // Extract the PR id from the response. The actual extraction logic might need to be adjusted based on the actual response structure.
         // Assuming the response contains a JSON field named "id" at the root.
         String prId = response.jsonPath().getString("number");

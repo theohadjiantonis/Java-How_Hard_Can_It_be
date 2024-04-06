@@ -17,6 +17,7 @@ public class GithubGetShaAPI {
 
         // Print the response body
         System.out.println("Retrieve Current Sha Response Body: ");
+        System.out.println("Response Code: " + response.statusCode());
         response.body().prettyPrint();
         return sha;
     }
