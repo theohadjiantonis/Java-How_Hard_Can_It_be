@@ -1,9 +1,7 @@
-package utils;
+package GithubAPIs;
 
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
-
-import static org.hamcrest.Matchers.equalTo;
 
 public class GithubGetAPI {
 

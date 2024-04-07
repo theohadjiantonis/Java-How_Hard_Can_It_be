@@ -1,5 +1,6 @@
 package org;
 
+import GithubAPIs.*;
 import modelClasses.Company;
 import utils.*;
 import java.nio.charset.StandardCharsets;

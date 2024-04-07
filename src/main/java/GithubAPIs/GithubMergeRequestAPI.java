@@ -1,8 +1,8 @@
-package utils;
+package GithubAPIs;
 
 import io.restassured.http.ContentType;
 import static io.restassured.RestAssured.given;
-import io.restassured.response.Response;
+
 import io.restassured.response.ValidatableResponse;
 
 public class GithubMergeRequestAPI {

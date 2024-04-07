@@ -1,4 +1,4 @@
-package utils;
+package GithubAPIs;
 
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
