@@ -2,23 +2,23 @@ package utils;
 
 import io.restassured.http.ContentType;
 import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 public class GithubPullRequestAPI {
-    public static String createPullRequest(String sourceBranch, String targetBranch, String title, String body, String token, String userName, String repo) {
-        Response response = RestAssured.given()
+    public static Integer createPullRequest(String sourceBranch, String targetBranch, String title, String body, String token, String userName, String repo) {
+        ValidatableResponse response = RestAssured.given()
                 .auth()
                 .oauth2(token)
                 .baseUri("https://api.github.com")
                 .contentType(ContentType.JSON)
                 .body("{\"title\": \"" + title + "\", \"body\": \"" + body + "\", \"head\": \"" + sourceBranch + "\", \"base\": \"" + targetBranch + "\"}")
-                .post("/repos/" + userName + "/" + repo + "/pulls");
+                .when()
+                .post("/repos/" + userName + "/" + repo + "/pulls")
+                .then()
+                .statusCode(201);
 
-        System.out.println("Pull Request Response: ");
-        System.out.println("Response Code: " + response.statusCode());
-        // Extract the PR id from the response. The actual extraction logic might need to be adjusted based on the actual response structure.
-        // Assuming the response contains a JSON field named "id" at the root.
-        String prId = response.jsonPath().getString("number");
-        return prId;
+        System.out.println("Pull Request");
+        // Extract and return the number of the PR which will be used in the merge payload
+        return response.extract().path("number");
     }
 }
